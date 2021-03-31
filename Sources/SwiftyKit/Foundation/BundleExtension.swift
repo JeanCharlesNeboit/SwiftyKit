@@ -7,11 +7,7 @@
 
 import Foundation
 
-extension Bundle {
-    public var identifier: String {
-        return bundleIdentifier ?? "unknow_bundle_identifier"
-    }
-    
+extension Bundle {    
     public var name: String {
         infoDictionary?["CFBundleName"] as? String ?? ""
     }
