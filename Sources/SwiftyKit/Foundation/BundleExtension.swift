@@ -7,20 +7,24 @@
 
 import Foundation
 
-extension Bundle {    
-    public var name: String {
+public extension Bundle {
+    var name: String {
         infoDictionary?["CFBundleName"] as? String ?? ""
     }
     
-    public var displayName: String {
+    var displayName: String {
         infoDictionary?["CFBundleDisplayName"] as? String ?? name
     }
     
-    public var version: String {
+    var version: String {
         (infoDictionary?["CFBundleShortVersionString"] as? String) ?? ""
     }
     
-    public var build: String {
+    var build: String {
         (infoDictionary?["CFBundleVersion"] as? String) ?? ""
+    }
+    
+    var info: String {
+        "\(displayName) v\(version) (\(build))"
     }
 }
