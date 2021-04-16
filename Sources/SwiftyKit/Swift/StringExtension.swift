@@ -9,6 +9,11 @@ public extension Optional where Wrapped == String {
     var strongValue: String {
         return self ?? ""
     }
+    
+    var isEmptyOrNil: Bool {
+        guard let self = self else { return true }
+        return self.isEmpty
+    }
 }
 
 public extension String {
@@ -18,5 +23,9 @@ public extension String {
     
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
+    }
+    
+    var diacriticInsensitive: String {
+        folding(options: .diacriticInsensitive, locale: .current)
     }
 }

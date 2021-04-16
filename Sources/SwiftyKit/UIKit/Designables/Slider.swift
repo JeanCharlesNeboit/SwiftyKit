@@ -4,6 +4,7 @@
 //
 //  Created by Jean-Charles Neboit on 13/04/2021.
 //
+// https://stackoverflow.com/questions/35452185/how-can-i-make-a-uislider-with-step-value
 
 #if os(iOS) && canImport(UIKit)
 import UIKit
@@ -12,15 +13,17 @@ import UIKit
 public class Slider: UISlider {
     // MARK: - Properties
     @IBInspectable
-    var step: Float = 0
+    public var step: Float = 0
     
-    // MARK: -
-    public override func setValue(_ value: Float, animated: Bool) {
-        var newValue = value
-        if step != 0 {
-            newValue = round((value - minimumValue) / step)
-        }
-        super.setValue(newValue, animated: animated)
+    @IBInspectable
+    public var showStepIndicator: Bool = true
+    
+    public var stepable: Bool {
+        step != 0
+    }
+    
+    public var numberOfStep: Int {
+        return Int((maximumValue - minimumValue) / step) + 1
     }
 }
 #endif
