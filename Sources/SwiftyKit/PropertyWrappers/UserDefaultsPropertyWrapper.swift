@@ -7,37 +7,33 @@
 
 import Foundation
 
-@propertyWrapper
-public struct SwiftyUserDefaults<T> {
+open class AbstractUserDefault<T> {
+    // MARK: - Properties
     let key: String
     let userDefaults: UserDefaults
     let defaultValue: T
 
-    public init(key: String, defaultValue: T, userDefaults: UserDefaults = UserDefaults.standard) {
+    // MARK: - Initialization
+    public init(wrappedValue: T, key: String, userDefaults: UserDefaults = UserDefaults.standard) {
         self.key = key
-        self.defaultValue = defaultValue
+        self.defaultValue = wrappedValue
         self.userDefaults = userDefaults
     }
-    
-    public var wrappedValue: T {
+}
+
+@propertyWrapper
+open class UserDefault<T>: AbstractUserDefault<T> {
+    // MARK: - Properties
+    open var wrappedValue: T {
         get { userDefaults.object(forKey: key) as? T ?? defaultValue }
         set { userDefaults.set(newValue, forKey: key) }
     }
 }
 
 @propertyWrapper
-public struct SwiftyRawUserDefaults<T> where T: RawRepresentable {
-    let key: String
-    let userDefaults: UserDefaults
-    let defaultValue: T
-
-    public init(key: String, defaultValue: T, userDefaults: UserDefaults = UserDefaults.standard) {
-        self.key = key
-        self.defaultValue = defaultValue
-        self.userDefaults = userDefaults
-    }
-    
-    public var wrappedValue: T {
+open class RawUserDefault<T>: AbstractUserDefault<T> where T: RawRepresentable {
+    // MARK: - Properties
+    open var wrappedValue: T {
         get {
             guard let rawValue = userDefaults.object(forKey: key) as? T.RawValue,
                   let value = T.init(rawValue: rawValue) else { return defaultValue }

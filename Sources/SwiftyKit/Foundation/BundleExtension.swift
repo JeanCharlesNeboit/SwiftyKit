@@ -25,6 +25,6 @@ public extension Bundle {
     }
     
     var info: String {
-        "\(displayName) v\(version) (\(build))"
+        "\(displayName) v\(version) #\(build)"
     }
 }
