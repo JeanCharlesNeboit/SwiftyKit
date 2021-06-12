@@ -1,6 +1,6 @@
 //
 //  CellIdentifiable.swift
-//  
+//  SwiftyKit
 //
 //  Created by Jean-Charles Neboit on 30/03/2021.
 //

@@ -36,7 +36,7 @@ public class SwitchSlider: Slider {
     public override func setValue(_ value: Float, animated: Bool) {
         var newValue = value
         if stepable {
-            newValue = round((value - minimumValue) / step)
+            newValue = round(value / step) * step
         }
         super.setValue(newValue, animated: animated)
     }
