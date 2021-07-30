@@ -14,6 +14,11 @@ public extension Optional where Wrapped == String {
         guard let self = self else { return true }
         return self.isEmpty
     }
+    
+    var nilIfEmpty: String? {
+        guard !isEmptyOrNil else { return nil }
+        return self
+    }
 }
 
 public extension String {
