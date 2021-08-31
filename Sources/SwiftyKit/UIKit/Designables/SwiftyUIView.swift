@@ -8,6 +8,20 @@
 #if canImport(UIKit)
 import UIKit
 
+open class HorizontalCapsule: UIView {
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.width/2
+    }
+}
+
+open class VerticalCapsule: UIView {
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.height/2
+    }
+}
+
 @IBDesignable
 open class SwiftyUIView: UIView {
     // MARK: - Properties
