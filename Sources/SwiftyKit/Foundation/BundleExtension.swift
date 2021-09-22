@@ -24,7 +24,7 @@ public extension Bundle {
         (infoDictionary?["CFBundleVersion"] as? String) ?? ""
     }
     
-    var info: String {
-        "\(displayName) v\(version) #\(build)"
+    func info(release: String = "") -> String {
+        "\(displayName) \(release) v\(version) #\(build)"
     }
 }

@@ -11,14 +11,14 @@ import UIKit
 open class HorizontalCapsule: UIView {
     open override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = bounds.width/2
+        layer.cornerRadius = bounds.height/2
     }
 }
 
 open class VerticalCapsule: UIView {
     open override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = bounds.height/2
+        layer.cornerRadius = bounds.width/2
     }
 }
 
