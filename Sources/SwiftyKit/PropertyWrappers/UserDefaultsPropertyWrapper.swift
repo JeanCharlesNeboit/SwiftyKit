@@ -26,7 +26,13 @@ open class UserDefault<T>: AbstractUserDefault<T> {
     // MARK: - Properties
     open var wrappedValue: T {
         get { userDefaults.object(forKey: key) as? T ?? defaultValue }
-        set { userDefaults.set(newValue, forKey: key) }
+        set {
+            if let optional = newValue as? AnyOptional, optional.isNil {
+                userDefaults.removeObject(forKey: key)
+            } else {
+                userDefaults.set(newValue, forKey: key)
+            }
+        }
     }
 }
 

@@ -50,7 +50,6 @@ public class SwitchSlider: Slider {
     // MARK: - Layout
     private func drawStepsIndicator() {
         let trackSize = trackRect(forBounds: bounds)
-        //maximumTrackTintColor = UIColor.lightGray
             
         let thumbSize = thumbRect(forBounds: bounds, trackRect: trackRect(forBounds: bounds), value: value).size
         let thumbWidth = thumbSize.width
@@ -60,10 +59,12 @@ public class SwitchSlider: Slider {
         let trackHeight = trackSize.height
         
         let indicatorHeight = thumbHeight * 1/3
+        let indicatorWidth = trackHeight
+        
         let indicatorTrackViewY = trackSize.minY - (indicatorHeight/2 - trackHeight/2)
         let indicatorTrackView = UIView(frame: .init(x: thumbWidth/2, y: indicatorTrackViewY, width: width, height: indicatorHeight))
         
-        let trackView = UIView(frame: .init(x: 0, y: indicatorHeight/2 - trackHeight/2, width: width, height: trackHeight))
+        let trackView = UIView(frame: .init(x: indicatorWidth, y: indicatorHeight/2 - trackHeight/2, width: width - indicatorWidth, height: trackHeight))
         trackView.backgroundColor = trackColor
         indicatorTrackView.addSubview(trackView)
         
