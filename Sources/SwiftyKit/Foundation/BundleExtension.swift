@@ -24,7 +24,13 @@ public extension Bundle {
         (infoDictionary?["CFBundleVersion"] as? String) ?? ""
     }
     
-    func info(release: String = "") -> String {
-        "\(displayName) \(release) v\(version) #\(build)"
+    func info(release: String? = nil) -> String {
+        [
+            "\(displayName)",
+            release,
+            "v\(version)",
+            "#\(build)"
+        ].compactMap { $0 }
+        .joined(separator: " ")
     }
 }
