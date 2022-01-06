@@ -5,6 +5,7 @@
 //  Created by Jean-Charles Neboit on 25/05/2021.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 extension UICollectionView {
@@ -12,3 +13,4 @@ extension UICollectionView {
         dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as? T
     }
 }
+#endif
