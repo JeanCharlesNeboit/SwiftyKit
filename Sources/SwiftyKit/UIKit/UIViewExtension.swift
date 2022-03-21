@@ -8,6 +8,7 @@
 #if canImport(UIKit)
 import UIKit
 
+// swiftlint:disable force_cast
 extension UIView {
     public class func loadFromXib<T>() -> T {
         let nibName = String(describing: T.self)
@@ -16,6 +17,7 @@ extension UIView {
         return view
     }
 }
+// swiftlint:enable force_cast
 
 extension UIView {
     public func addShadow(color: UIColor, opacity: Float, offset: CGSize, radius: CGFloat) {

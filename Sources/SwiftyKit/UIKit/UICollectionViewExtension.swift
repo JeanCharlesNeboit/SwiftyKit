@@ -8,6 +8,7 @@
 #if canImport(UIKit)
 import UIKit
 
+// swiftlint:disable force_cast
 extension UICollectionView {
     public func dequeueReusableCell<T: UICollectionViewCell & CellIdentifiable>(for indexPath: IndexPath) -> T? {
         dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as? T
@@ -27,4 +28,5 @@ extension UICollectionView {
         dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: T.identifier, for: indexPath) as! T
     }
 }
+// swiftlint:enable force_cast
 #endif

@@ -31,14 +31,16 @@ public extension Locale {
         return Self.languageName(languageCode: languageCode, locale: self)
     }
     
+    // swiftlint:disable force_unwrapping
     static func countryFlag(countryCode: String) -> String {
-        let base : UInt32 = 127397
+        let base: UInt32 = 127397
         var s = ""
         for v in countryCode.unicodeScalars {
             s.unicodeScalars.append(UnicodeScalar(base + v.value)!)
         }
         return String(s)
     }
+    // swiftlint:enable force_unwrapping
     
     static func countryName(countryCode: String, locale: Locale = Locale.current) -> String? {
         if let name = (locale as NSLocale).localizedString(forCountryCode: countryCode) {

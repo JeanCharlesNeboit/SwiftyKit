@@ -70,7 +70,7 @@ open class SwiftyUIView: UIView {
     
     // MARK: - Border Color
     @IBInspectable
-    public var borderColor: UIColor? = nil {
+    public var borderColor: UIColor? {
         didSet {
             refreshBorderColor(value: borderColor)
         }
@@ -91,31 +91,5 @@ open class SwiftyUIView: UIView {
     func refreshBorderWidth(value: CGFloat) {
         layer.borderWidth = value
     }
-    
-//    // MARK: - Highlight
-//    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        setHighlight(true)
-//    }
-//    
-//    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        setHighlight(false)
-//    }
-//    
-//    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        setHighlight(false)
-//    }
-//    
-//    private func setHighlight(_ isHighlight: Bool) {
-//        DispatchQueue.main.async {
-////            self.backgroundColor = UIColor.white
-//            UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveLinear, animations: {
-//                if #available(iOS 13.0, tvOS 13.0, *) {
-//                    self.backgroundColor = isHighlight ? UIColor.opaqueSeparator : .white
-//                } else {
-//                    self.backgroundColor = isHighlight ? UIColor.lightGray : .white
-//                }
-//            }, completion: nil)
-//        }
-//    }
 }
 #endif
