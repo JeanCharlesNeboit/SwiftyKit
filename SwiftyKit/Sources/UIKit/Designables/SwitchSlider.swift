@@ -10,14 +10,14 @@ import UIKit
 
 @IBDesignable
 public class SwitchSlider: Slider {
-    // MARK: - Properties
+    // MARK: Properties
     @IBInspectable
     public var trackColor: UIColor = .lightGray
     
     private var indicatorTrackView: UIView?
     private var impactFeedbackGenerator: UIImpactFeedbackGenerator?
     
-    // MARK: - Lifecycle
+    // MARK: Lifecycle
     public override func layoutSubviews() {
         super.layoutSubviews()
         indicatorTrackView?.removeFromSuperview()
@@ -28,14 +28,14 @@ public class SwitchSlider: Slider {
         }
     }
     
-    // MARK: - Lifecycle
+    // MARK: Lifecycle
     public override func awakeFromNib() {
         super.awakeFromNib()
         minimumTrackTintColor = .clear
         maximumTrackTintColor = .clear
     }
     
-    // MARK: -
+    // MARK:
     public override func setValue(_ value: Float, animated: Bool) {
         var newValue = value
         if stepable {
@@ -47,7 +47,7 @@ public class SwitchSlider: Slider {
         super.setValue(newValue, animated: animated)
     }
     
-    // MARK: - Layout
+    // MARK: Layout
     private func drawStepsIndicator() {
         let trackSize = trackRect(forBounds: bounds)
             
@@ -79,7 +79,7 @@ public class SwitchSlider: Slider {
         self.indicatorTrackView = indicatorTrackView
     }
     
-    // MARK: - Haptic Feedback
+    // MARK: Haptic Feedback
     private func genereateHapticFeedback() {
         impactFeedbackGenerator?.impactOccurred()
     }

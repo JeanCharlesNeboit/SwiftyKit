@@ -10,7 +10,7 @@ import RxSwift
 
 @propertyWrapper
 public class RxBehaviorSubject<T> {
-    // MARK: - Properties
+    // MARK: Properties
     private let disposeBag = DisposeBag()
     private var behaviorSubject: BehaviorSubject<T>
     private var value: T
@@ -28,7 +28,7 @@ public class RxBehaviorSubject<T> {
         behaviorSubject
     }
 
-    // MARK: - Initialization
+    // MARK: Initialization
     public init(wrappedValue: T) {
         self.value = wrappedValue
         self.behaviorSubject = BehaviorSubject<T>(value: wrappedValue)

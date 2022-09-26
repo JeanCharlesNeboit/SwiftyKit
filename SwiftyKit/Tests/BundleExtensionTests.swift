@@ -9,12 +9,12 @@
 //@testable import SwiftyKit
 //
 //class BundleExtensionTests: XCTestCase {
-//    // MARK: - Properties
+//    // MARK: Properties
 //    var bundle: Bundle {
 //        Bundle(for: type(of: self))
 //    }
 //    
-//    // MARK: - Tests
+//    // MARK: Tests
 //    func testBundleName() {
 //        XCTAssertEqual(bundle.name, "SwiftyKitTests")
 //    }

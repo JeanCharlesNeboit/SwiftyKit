@@ -11,18 +11,18 @@ import Combine
 
 @available(iOS 13, *)
 public final class CancelBag: Cancellable {
-    // MARK: - Properties
+    // MARK: Properties
     private let lock: NSLock = NSLock()
     private var cancellables: [Cancellable] = []
     
-    // MARK: - Initialization
+    // MARK: Initialization
     public init() { }
     
     deinit {
         self.cancel()
     }
 
-    // MARK: -
+    // MARK:
     internal func add(_ cancellable: Cancellable) {
         self.lock.lock()
         defer { self.lock.unlock() }

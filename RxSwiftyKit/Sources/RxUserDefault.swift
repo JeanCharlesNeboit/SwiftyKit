@@ -11,7 +11,7 @@ import RxSwift
 
 @propertyWrapper
 public class RxUserDefault<T>: UserDefault<T> {
-    // MARK: - Properties
+    // MARK: Properties
     private lazy var behaviorSubject: BehaviorSubject<T> = {
         BehaviorSubject<T>(value: wrappedValue)
     }()
@@ -26,7 +26,7 @@ public class RxUserDefault<T>: UserDefault<T> {
         behaviorSubject
     }
 
-    // MARK: - Initialization
+    // MARK: Initialization
     override public init(wrappedValue: T, key: String, userDefaults: UserDefaults = UserDefaults.standard) {
         super.init(wrappedValue: wrappedValue, key: key, userDefaults: userDefaults)
     }
@@ -34,7 +34,7 @@ public class RxUserDefault<T>: UserDefault<T> {
 
 @propertyWrapper
 public class RxRawUserDefault<T>: RawUserDefault<T> where T: RawRepresentable {
-    // MARK: - Properties
+    // MARK: Properties
     private lazy var behaviorSubject: BehaviorSubject<T> = {
         BehaviorSubject<T>(value: wrappedValue)
     }()
@@ -49,7 +49,7 @@ public class RxRawUserDefault<T>: RawUserDefault<T> where T: RawRepresentable {
         behaviorSubject
     }
 
-    // MARK: - Initialization
+    // MARK: Initialization
     override public init(wrappedValue: T, key: String, userDefaults: UserDefaults = UserDefaults.standard) {
         super.init(wrappedValue: wrappedValue, key: key, userDefaults: userDefaults)
     }

@@ -24,7 +24,7 @@ open class VerticalCapsule: UIView {
 
 @IBDesignable
 open class SwiftyUIView: UIView {
-    // MARK: - Properties
+    // MARK: Properties
     static public var DefaultCornerRadius: CGFloat = 0
     
     private var savedBackgroundColor: UIColor?
@@ -34,7 +34,7 @@ open class SwiftyUIView: UIView {
         }
     }
     
-    // MARK: - Initialization
+    // MARK: Initialization
     override public init(frame: CGRect) {
         super.init(frame: frame)
         sharedInit()
@@ -56,7 +56,7 @@ open class SwiftyUIView: UIView {
         refreshBorderWidth(value: borderWidth)
     }
     
-    // MARK: - Corner Radius
+    // MARK: Corner Radius
     @IBInspectable
     public var cornerRadius: CGFloat = DefaultCornerRadius {
         didSet {
@@ -68,7 +68,7 @@ open class SwiftyUIView: UIView {
         layer.cornerRadius = value
     }
     
-    // MARK: - Border Color
+    // MARK: Border Color
     @IBInspectable
     public var borderColor: UIColor? {
         didSet {
@@ -80,7 +80,7 @@ open class SwiftyUIView: UIView {
         layer.borderColor = value?.cgColor
     }
     
-    // MARK: - Border Width
+    // MARK: Border Width
     @IBInspectable
     public var borderWidth: CGFloat = 0 {
         didSet {

@@ -11,7 +11,7 @@ import RxRelay
 
 @propertyWrapper
 public class RxBehaviorRelay<T> {
-    // MARK: - Properties
+    // MARK: Properties
     private let disposeBag = DisposeBag()
     private var behaviorRelay: BehaviorRelay<T>
     private var value: T
@@ -29,7 +29,7 @@ public class RxBehaviorRelay<T> {
         behaviorRelay
     }
 
-    // MARK: - Initialization
+    // MARK: Initialization
     public init(wrappedValue: T) {
         self.value = wrappedValue
         self.behaviorRelay = BehaviorRelay<T>(value: wrappedValue)

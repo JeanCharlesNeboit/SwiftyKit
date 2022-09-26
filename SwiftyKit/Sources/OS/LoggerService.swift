@@ -11,7 +11,7 @@ import os.log
 public typealias log = LoggerService
 
 public class LoggerService {
-    // MARK: - Log
+    // MARK: Log
     public static func message(_ message: String) {
         os_log("%@", log: .default, type: .info, message)
     }
@@ -26,7 +26,7 @@ public class LoggerService {
         self.message("ℹ️ \(message)")
     }
     
-    // MARK: - Error
+    // MARK: Error
     public static func error(_ message: String) {
         self.message("‼️ \(message)")
     }

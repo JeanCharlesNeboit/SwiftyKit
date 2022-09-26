@@ -12,13 +12,13 @@ import RealmSwift
 public typealias WriteResult = Result<Void, Error>
 
 public class RealmService {
-    // MARK: - Singleton
+    // MARK: Singleton
     public static var `default` = RealmService()
     
-    // MARK: - Properties
+    // MARK: Properties
     private var realm: Realm
     
-    // MARK: - Initialization
+    // MARK: Initialization
     public init() {
         do {
             realm = try Realm()
@@ -38,7 +38,7 @@ public class RealmService {
         realm.printFilePath()
     }
     
-    // MARK: -
+    // MARK:
     func beginWrite() {
         if realm.isInWriteTransaction == false {
             realm.beginWrite()
@@ -78,7 +78,7 @@ public class RealmService {
         }
     }
     
-    // MARK: - Request
+    // MARK: Request
     public func all<T>(_ type: T.Type) -> Results<T> where T: RealmSwift.Object {
         return realm.objects(type)
     }

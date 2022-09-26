@@ -11,7 +11,7 @@ import Combine
 @available(iOS 13, *)
 @propertyWrapper
 public class PublishedDidSet<T> {
-    // MARK: - Properties
+    // MARK: Properties
     private let cancelBag = CancelBag()
     private var currentValueSubject: CurrentValueSubject<T, Never>
     private var value: T
@@ -29,7 +29,7 @@ public class PublishedDidSet<T> {
         currentValueSubject
     }
 
-    // MARK: - Initialization
+    // MARK: Initialization
     public init(wrappedValue: T) {
         self.value = wrappedValue
         self.currentValueSubject = CurrentValueSubject<T, Never>(wrappedValue)

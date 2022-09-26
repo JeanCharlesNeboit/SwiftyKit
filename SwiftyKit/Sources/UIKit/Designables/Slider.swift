@@ -11,7 +11,7 @@ import UIKit
 
 @IBDesignable
 public class Slider: UISlider {
-    // MARK: - Properties
+    // MARK: Properties
     @IBInspectable
     public var step: Float = 0
     

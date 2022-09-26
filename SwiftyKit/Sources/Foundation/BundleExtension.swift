@@ -29,7 +29,7 @@ public extension Bundle {
             "\(displayName)",
             release,
             "v\(version)",
-            "#\(build)"
+            "(\(build))"
         ].compactMap { $0 }
         .joined(separator: " ")
     }

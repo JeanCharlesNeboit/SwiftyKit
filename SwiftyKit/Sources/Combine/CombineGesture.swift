@@ -5,7 +5,7 @@
 //  Created by Jean-Charles Neboit on 09/02/2022.
 //
 
-#if canImport(Combine)
+#if canImport(Combine) && canImport(UIKit)
 import Combine
 import UIKit
 
